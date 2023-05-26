@@ -80,3 +80,19 @@ bool DoubleLinkedList::search(int rollNo, node** previous, node** current) {
 	}
 	return (*current != NULL);
 }
+
+bool DoubleLinkedList::deletenode(int rollNo) {
+	node* previous, * current;
+	previous = current = NULL;
+	if (search(rollNo, &previous, &current) == false)
+		return false;
+	if (current->next != NULL)
+		current->next->prev = previous; //step 2
+	if (previous != NULL)
+		previous->next = current->next; //step 3
+	else
+		START = current->next;
+
+	delete current; //step 4
+	return true;
+}
