@@ -11,5 +11,6 @@ public:
 };
 
 class DoubleLinkedList {
-
+private:
+	node* START = NULL;
 };
