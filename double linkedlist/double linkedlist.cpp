@@ -149,7 +149,7 @@ void DoubleLinkedList::searchData() {
 		cout << "\nList is empty" << endl;
 
 	}
-	Node* prev, * curr;
+	node* prev, * curr;
 	prev = curr = NULL;
 	cout << "\nEnter the roll number of the student whose record you want to search: ";
 	int num;
@@ -160,6 +160,50 @@ void DoubleLinkedList::searchData() {
 		cout << "\nRecord found" << endl;
 		cout << "\nRecord number: " << curr->noMhs << endl;
 		cout << "\nName: " << curr->name << endl;
+	}
+}
+
+int main() {
+	DoubleLinkedList obj;
+	while (true) {
+		try {
+			cout << "\nMenu" << endl;
+			cout << "1. Add a record to the list" << endl;
+			cout << "2. Delete a record from the list" << endl;
+			cout << "3. View all record in the ascending order of roll numbers" << endl;
+			cout << "4. View all record in the descending order of roll numbers" << endl;
+			cout << "5. Search for a record in the list" << endl;
+			cout << "6. Exit" << endl;
+			cout << "\nEnter tour choice (1-6): ";
+			char ch;
+			cin >> ch;
+
+			switch (ch) {
+			case '1':
+				obj.addnode();
+				break;
+			case '2':
+				obj.hapus();
+				break;
+			case '3':
+				obj.traverse();
+				break;
+			case '4':
+				obj.revtraverse();
+				break;
+			case '5':
+				obj.searchData();
+				break;
+			case '6':
+				return 0;
+			default:
+				cout << "\nInvalid option" << endl;
+				break;
+			}
+		}
+		catch (exception& e) {
+			cout << "check for the values entered." << endl;
+		}
 	}
 }
 
