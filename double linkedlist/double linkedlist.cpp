@@ -23,3 +23,7 @@ public:
 	void hapus();
 	void searchData();
 };
+
+void DoubleLinkedList::addnode() {
+	
+}
